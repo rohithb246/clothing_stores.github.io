@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Untitled-1 copy.png">
+    <title>Clothing Stores</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: #223243;
+        font-family: "Avenir Next", "Avenir", sans-serif;
+    }
+    
+    #menuToggle {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+        user-select: none;
+    }
+    
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+    
+    #menuToggle a:hover {
+        color: tomato;
+    }
+    
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    }
+    
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+    /*
+ * But let's hide the middle one.
+ */
+    
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+    
+    #menu {
+        position: absolute;
+        width: 300px;
+        height: 200vh;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: #ededed;
+        list-style-type: none;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+    
+    #menu img {
+        width: 130px;
+    }
+    
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+    /*
+ * And let's slide it in from the left
+ */
+    
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+    
+    .container {
+        padding: 40px;
+        margin-left: 400px;
+        margin-top: 50px;
+        align-items: center;
+        border: none;
+        width: 45%;
+        height: auto;
+        background: #223243;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+        font-weight: 300;
+        border-radius: 25px;
+        font-size: 1em;
+        box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+        transition: 0.5s;
+        outline: none;
+    }
+    
+    .container .inputBox input {
+        padding: 12px 6px 12px 10px;
+        border: none;
+        width: 80vh;
+        background: #fff;
+        margin: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgb(26, 26, 26);
+        font-weight: 300;
+        font-size: 15px;
+        transition: 0.5s;
+        outline: none;
+        font-family: poppins, sans-serif;
+    }
+    
+    .container h2 {
+        text-align: center;
+        text-decoration: underline;
+        justify-content: center;
+        font-size: 24px;
+        margin: 10px;
+        color: rgb(121, 232, 121);
+    }
+    
+    .container .inputBox textarea {
+        padding: 0px 6px 12px 10px;
+        border: none;
+        width: 80vh;
+        background: #fff;
+        margin: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgb(26, 26, 26);
+        font-weight: 300;
+        font-size: 15px;
+        transition: 0.5s;
+        outline: none;
+        font-family: poppins, sans-serif;
+    }
+    
+    .container h3 {
+        text-align: center;
+        justify-content: center;
+        margin: 8px;
+        font-size: 18px;
+    }
+    
+    .container button {
+        text-align: center;
+        justify-content: center;
+        margin-left: 40px;
+        font-size: 20px;
+        color: #fff;
+        width: 20%;
+        padding: 15px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        margin-top: 5px;
+        background: transparent;
+        align-items: center;
+    }
+    
+    .container button:hover {
+        color: rgb(19, 18, 18);
+        background-color: rgb(121, 232, 121);
+        transition: all 0.4s ease 0s;
+    }
+</style>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <img src="Untitled-1.png" alt="">
+                <a href="Home.html">
+                    <li>Home</li>
+                </a>
+                <a href="login.html">
+                    <li>Account</li>
+                </a>
+                <a href="contact.html">
+                    <li>Details</li>
+                </a>
+                <a href="one.html">
+                    <li>Contact Us</li>
+                </a>
+                <a href="#"><i class="fa-solid fa-bag-shopping"></i>
+                    
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section>
+
+
+        <div class="container">
+
+            <h2>Contact Us</h2>
+            <h3>Please free to talk with us if have any questions </h3>
+            <h3>We endeavou to answer within 24hours</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="E-mail">
+            </div>
+            <div class="inputBox">
+                <textarea type="text" placeholder="Message" rows="4"></textarea>
+            </div>
+            <button>Submit</button>
+            <button>Cancel</button>
+
+        </div>
+    </section>
+
+</body>

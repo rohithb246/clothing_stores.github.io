@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="Untitled-1 copy.png">
+    <title>Clothing stores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #223243;
+        }
+        
+        .container {
+            padding: 40px;
+            border-radius: 20px;
+            border: 8px solid #223243;
+            box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+        }
+        
+        .container .Form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+            color: #fff;
+        }
+        
+        .logo img {
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container .Form.signin,
+        .container .signinForm .Form.signup {
+            display: none;
+        }
+        
+        .container .signinForm.Form.signin {
+            display: flex;
+        }
+        
+        .container.Form h2 {
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+        
+        .container .Form .inputBox {
+            position: relative;
+            width: 300px;
+        }
+        
+        .container .Form .inputBox input {
+            padding: 12px 10px 12px 48px;
+            border: none;
+            width: 100%;
+            background: #223243;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #fff;
+            font-weight: 300;
+            border-radius: 25px;
+            font-size: 1em;
+            box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+            transition: 0.5s;
+            outline: none;
+        }
+        
+        .container .Form .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 12px 10px 12px 48px;
+            pointer-events: none;
+            font-size: 1em;
+            font-weight: 300;
+            transition: 0.5s;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .container .Form .inputBox input:valid~span,
+        .container .Form .inputBox input:focus~span {
+            color: #00dfc4;
+            border: 1px solid #00dfc4;
+            background: #223243;
+            transform: translateX(25px)translateY(-7px);
+            font-size: 0.6em;
+            padding: 0 8px;
+            border-radius: 10px;
+            letter-spacing: 0.1em;
+        }
+        
+        .container .Form .inputBox input:valid,
+        .container .Form .inputBox input:focus {
+            border: 1px solid#00dfc4;
+        }
+        
+        .container .Form .inputBox i {
+            position: absolute;
+            top: 15px;
+            left: 16px;
+            width: 25px;
+            padding: 2px 0;
+            color: #00dfc4;
+            border-right: 1px solid #00dfc4;
+        }
+        
+        .container .Form .inputBox input[type="submit"] {
+            align-items: center;
+            justify-content: center;
+            background: #00dfc4;
+            color: #223243;
+            padding: 10px 0;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+        }
+        
+        .container .Form p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75em;
+            font-weight: 300;
+        }
+        
+        .container .Form p a {
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .alert-box {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 150px;
+            height: auto;
+            padding: 10px;
+            text-transform: capitalize;
+            background: rgba(225, 119, 119);
+            border-top: 10px solid rgb(225, 37, 37);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: #fff;
+            font-family: sans-serif;
+            text-align: center;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="C:\Users\Rohith\AppData\Local\Temp\~vs812D.sql"
+    <div class="alert-box">
+        <P class="alert">Hello</P>
+    </div>
+    <div class="container">
+        <div class="Form signup">
+            <div class="logo">
+                <a href="#"><img src="img/Untitled-1.png" alt="logo"></a>
+            </div>
+            <h2>Signin</h2>
+            <div class="inputBox">
+                <input type="text" required="required" name="Name">
+                <i class="fa-regular fa-user"></i>
+                <span>Username</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="password" required="required" name="password">
+                <i class="fa-solid fa-lock"></i>
+                <span>Password</span>
+            </div>
+
+            <div class="inputBox">
+                <a href="Home.html"><input type="submit" value="Submit"></a>
+            </div>
+            <p>Not registered?
+                <a href="login.html" class="create ">create new account</a>
+            </p>
+        </div>
+        </div>
+     </form>
+    <script src="C:\Users\Rohith\OneDrive\Desktop\College project\.vs\tasks.vs.json"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #cdcdcd;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+#menuToggle {
+    display: block;
+    position: absolute;
+    padding-top: 0;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: tomato;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+
+/*
+* But let's hide the middle one.
+*/
+
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+/*
+* Ohyeah and the last one should go the other direction
+*/
+
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    width: 400px;
+    height: 200vh;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu img {
+    width: 130px;
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+
+/*
+* And let's slide it in from the left
+*/
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+body {
+    font-family: poppins, sans-serif;
+}
+
+#main img {
+    width: 100px;
+}
+
+#main {
+    background-color: #fff;
+    position: relative;
+    padding: 5px 5px;
+    width: 100%;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+#input {
+    display: none;
+}
+
+#main ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#main ul li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: #437e8e;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+#main ul li a:hover,
+#main ul li a.active {
+    background: #437e8e;
+    color: #ffff;
+}
+
+.flex-box {
+    display: flex;
+    margin: 10px auto;
+}
+
+.left {
+    width: 45%;
+}
+
+.big-img {
+    width: 400px;
+}
+
+.big-img img {
+    width: inherit;
+}
+
+.right a {
+    color: rgb(128, 128, 248);
+    font-size: 13px;
+}
+
+.right {
+    padding-top: 20px;
+    width: 55%;
+}
+
+.right span {
+    color: #606063;
+    font-size: 22px;
+}
+
+.right h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 23px;
+}
+
+.right h2 {
+    padding-top: 7px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1a1a1a;
+    justify-content: space-between;
+    display: grid;
+}
+
+.right h4 {
+    color: #1a1a1a;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.right button {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    width: 18%;
+    margin-left: 20px;
+    border-radius: 0 3px 3px 0;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    background: #ffc439
+}
+
+.right button:hover {
+    color: rgb(19, 18, 18);
+    background-color: #faeb44;
+    transition: all 0.4s ease 0s;
+}
+
+.right i {
+    font-size: 18px;
+    color: rgba(243, 181, 25);
+}
+
+.right input {
+    font-size: 20px;
+    padding: 10px;
+    width: 90px;
+    height: 40px;
+}
+
+.right input:focus {
+    outline: none;
+}
+
+.right input:out-of-range {
+    background-color: #fff;
+}
+
+.right input:in-range {
+    background-color: #fff
+}
+
+.right select {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.info {
+    padding: 20px;
+    color: #1a1a1a;
+}
+
+.info h3 {
+    font-size: 25px;
+}
+
+.info p {
+    font-size: 18px;
+}
+
+#product h2 {
+    text-align: left;
+    padding: 20px;
+    color: #141414;
+}
+
+#product {
+    background-color: #fff;
+    text-align: center;
+}
+
+#product .pro-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    padding: 5px 5px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#product .pro {
+    background-color: #fff;
+    width: 17%;
+    min-width: 200px;
+    margin-bottom: 50px;
+    padding: 10px 12px;
+    border: 1px solid#141414;
+    border-radius: 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 120px 120px 150px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+#product .pro:hover {
+    box-shadow: 120px 120px 150px rgba(0, 0, 0, 0.06);
+}
+
+#product .pro img {
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+    min-width: 40px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+#product .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#product h2,
+p {
+    font-size: 25px;
+}
+
+#product .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#product .pro .des i {
+    font-size: 12px;
+    color: rgba(243, 181, 25);
+}
+
+#product .pro .des h2 {
+    padding-top: 7px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #088178;
+    justify-content: space-between;
+    display: grid;
+}
+
+#product .pro .des h4 {
+    color: #088178;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+#product .pro button {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 80%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: #088178;
+}
+
+#product .pro button:hover {
+    color: rgb(19, 18, 18);
+    background-color: #faeb44;
+    transition: all 0.4s ease 0s;
+}
+
+.container {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 4fr 5fr 5fr 4fr;
+    padding: 45px;
+    padding-top: 30px;
+    min-width: 1000px;
+}
+
+.container div {
+    color: #fff;
+    font-size: 20px;
+}
+
+.container .footer-title {
+    color: #437e8e;
+    text-decoration: none;
+    text-decoration-line: none;
+    font-size: 20px;
+}
+
+#footerinfo p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: black;
+    font-size: 20px;
+}
